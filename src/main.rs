@@ -62,7 +62,7 @@ async fn main() -> std::io::Result<()> {
             .app_data(web::Data::new(shared_pool.clone()))
             .route("/api/products", web::get().to(products_endpoint))
     })
-    .bind(("127.0.0.1", 8080))?
+    .bind(("127.0.0.1", 5526))?
     .run()
     .await
 }
