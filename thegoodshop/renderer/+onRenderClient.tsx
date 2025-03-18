@@ -1,7 +1,7 @@
 // renderer/+onRenderClient.tsx
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import type { PageContextClient } from 'vike/types'
+import './layout.css'
 
 export { onRenderClient }
 

@@ -7,7 +7,7 @@ export async function onBeforeRender() {
   return {
     pageContext: {
       // Instead of "pageProps", we return our data under "data"
-      data: { products },
+      data: { products, title: 'Home' },
     },
   }
 }
