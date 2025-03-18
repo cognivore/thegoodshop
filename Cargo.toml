@@ -1,0 +1,18 @@
+[package]
+name = "thegoodshop"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+actix-web = "*"
+serde = "*"
+serde_json = "*"
+serde_derive = "*"
+tokio = { version = "*", features = ["rt-multi-thread", "macros"] }
+dotenv = "*"
+
+sqlx = { version = "*", features = ["runtime-tokio-native-tls", "macros", "sqlite"] }
+
+specta = { git = "https://github.com/specta-rs/specta", rev = "a0950d0264bb5ab9fb125fda501a5c04b2ac6382", features = ["chrono", "uuid", "url", "derive"] }
+specta-typescript = { git = "https://github.com/specta-rs/specta", rev = "a0950d0264bb5ab9fb125fda501a5c04b2ac6382" }
+specta-util = { git = "https://github.com/specta-rs/specta", rev = "a0950d0264bb5ab9fb125fda501a5c04b2ac6382", features = ["export"] }
