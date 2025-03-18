@@ -1,9 +1,11 @@
 import type { Product } from '../../src/types/generated'
 import { usePageContext } from 'vike-react/usePageContext'
+import { useCart } from '../../src/contexts/CartContext'
 
 export default function Page() {
   const pageContext = usePageContext()
   const { products } = pageContext.data as { products: Product[] }
+  const { addToCart } = useCart()
 
   return (
     <div className="p-4">
@@ -17,7 +19,12 @@ export default function Page() {
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
                 <p className="text-base text-lg">${p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary m-2">Add to Cart</button>
+                  <button
+                    className="btn btn-primary m-2"
+                    onClick={() => addToCart(p)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -30,7 +37,12 @@ export default function Page() {
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
                 <p className="text-base text-lg">${p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary m-2">Add to Cart</button>
+                  <button
+                    className="btn btn-primary m-2"
+                    onClick={() => addToCart(p)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -43,7 +55,12 @@ export default function Page() {
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
                 <p className="text-base text-lg">${p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary m-2">Add to Cart</button>
+                  <button
+                    className="btn btn-primary m-2"
+                    onClick={() => addToCart(p)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -56,7 +73,12 @@ export default function Page() {
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
                 <p className="text-base text-lg">${p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary m-2">Add to Cart</button>
+                  <button
+                    className="btn btn-primary m-2"
+                    onClick={() => addToCart(p)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
@@ -69,7 +91,12 @@ export default function Page() {
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
                 <p className="text-base text-lg">${p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-primary m-2">Add to Cart</button>
+                  <button
+                    className="btn btn-primary m-2"
+                    onClick={() => addToCart(p)}
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>
