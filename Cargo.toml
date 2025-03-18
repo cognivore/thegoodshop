@@ -10,6 +10,10 @@ serde_json = "*"
 serde_derive = "*"
 tokio = { version = "*", features = ["rt-multi-thread", "macros"] }
 dotenv = "*"
+anyhow = "*"
+tracing = "*"
+tracing-subscriber = { version = "*", features = ["env-filter"] }
+tracing-appender = "*"
 
 sqlx = { version = "*", features = ["runtime-tokio-native-tls", "macros", "sqlite"] }
 
