@@ -11,10 +11,10 @@ export default function LayoutDefault({ children }: { children: React.ReactNode 
         <header className="sticky top-0 z-50 py-6 bg-base-200 shadow-sm">
           <div className="max-w-7xl mx-auto px-4 relative">
             <div className="flex justify-between items-center">
-              <div className="w-24" /> {/* Spacer to balance the cart icon */}
-              <h1 className="text-2xl md:text-4xl font-bold absolute left-1/2 -translate-x-1/2">
-                The Good Shop
-              </h1>
+              <div className="w-24" />
+              <a href="/" className="text-2xl md:text-4xl font-bold absolute left-1/2 -translate-x-1/2 hover:opacity-60 transition-opacity">
+                <h1>The Good Shop</h1>
+              </a>
               <CartIcon />
             </div>
           </div>
