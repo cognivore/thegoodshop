@@ -20,7 +20,14 @@ export default function CheckoutPage() {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: totalAmountPence }),
+        body: JSON.stringify({
+          products: items.map(item => ({
+            id: item.product.id,
+            name: item.product.name,
+            price: item.product.price,
+            quantity: item.quantity
+          }))
+        }),
       });
       if (!res.ok) {
         throw new Error('Failed to create checkout session');

@@ -15,34 +15,47 @@ use sqlx::SqlitePool;
 use std::{env, path::PathBuf, sync::Arc};
 use tracing::Level;
 
+#[allow(dead_code)]
+#[derive(Deserialize)]
+struct CheckoutProduct {
+    id: u64,
+    name: String,
+    price: f64,
+    quantity: u64,
+}
+
 #[derive(Deserialize)]
 struct CreateCheckoutSessionRequest {
-    // Amount in cents (for example: $10.00 -> 1000)
-    amount: i64,
+    products: Vec<CheckoutProduct>,
 }
 
 async fn create_checkout_session(
     body: web::Json<CreateCheckoutSessionRequest>,
     stripe_client: web::Data<StripeClient>,
 ) -> impl Responder {
-    // Build a new Checkout Session creation request.
     let mut params = CreateCheckoutSession::new();
     params.success_url = Some("http://localhost:5526/checkout-success".into());
     params.cancel_url = Some("http://localhost:5526/checkout-cancel".into());
     params.mode = Some(CheckoutSessionMode::Payment);
-    params.line_items = Some(vec![CreateCheckoutSessionLineItems {
-        quantity: Some(1),
-        price_data: Some(CreateCheckoutSessionLineItemsPriceData {
-            currency: Currency::GBP,
-            unit_amount: Some(body.amount), // amount in cents
-            product_data: Some(CreateCheckoutSessionLineItemsPriceDataProductData {
-                name: "Order from The Good Shop".into(),
+
+    params.line_items = Some(
+        body.products
+            .iter()
+            .map(|product| CreateCheckoutSessionLineItems {
+                quantity: Some(product.quantity),
+                price_data: Some(CreateCheckoutSessionLineItemsPriceData {
+                    currency: Currency::GBP,
+                    unit_amount: Some((product.price * 100.0) as i64), // convert to pence
+                    product_data: Some(CreateCheckoutSessionLineItemsPriceDataProductData {
+                        name: product.name.clone(),
+                        ..Default::default()
+                    }),
+                    ..Default::default()
+                }),
                 ..Default::default()
-            }),
-            ..Default::default()
-        }),
-        ..Default::default()
-    }]);
+            })
+            .collect()
+    );
 
     match CheckoutSession::create(&stripe_client, params).await {
         Ok(session) => {
