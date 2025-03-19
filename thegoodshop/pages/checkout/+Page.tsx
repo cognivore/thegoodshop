@@ -12,8 +12,7 @@ export default function CheckoutPage() {
 
   // Use environment variable for PayPal client ID if desired.
   const initialOptions = {
-    // clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID, // TODO: Set in .env file
-    clientId: "AY-6OvLP5ZXjy_meoaWgcCIbG27owTTPkQfp36O7HXZPJlVFjjSvHwqz4UWGu2b7Xhs7KfQR2BOgI1co",
+    clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID,
     currency: "USD",
     intent: "capture",
   };
