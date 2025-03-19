@@ -17,7 +17,7 @@ export default function Page() {
               <div className="card-body p-2">
                 <h2 className="card-title truncate mt-4 mb-2 ml-4 mr-4">{p.name}</h2>
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
-                <p className="text-base text-lg">${p.price.toFixed(2)}</p>
+                <p className="text-base text-lg">£{p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-primary m-2"
@@ -35,7 +35,7 @@ export default function Page() {
               <div className="card-body p-2">
                 <h2 className="card-title truncate mt-4 mb-2 ml-4 mr-4">{p.name}</h2>
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
-                <p className="text-base text-lg">${p.price.toFixed(2)}</p>
+                <p className="text-base text-lg">£{p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-primary m-2"
@@ -53,7 +53,7 @@ export default function Page() {
               <div className="card-body p-2">
                 <h2 className="card-title truncate mt-4 mb-2 ml-4 mr-4">{p.name}</h2>
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
-                <p className="text-base text-lg">${p.price.toFixed(2)}</p>
+                <p className="text-base text-lg">£{p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-primary m-2"
@@ -71,7 +71,7 @@ export default function Page() {
               <div className="card-body p-2">
                 <h2 className="card-title truncate mt-4 mb-2 ml-4 mr-4">{p.name}</h2>
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
-                <p className="text-base text-lg">${p.price.toFixed(2)}</p>
+                <p className="text-base text-lg">£{p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-primary m-2"
@@ -89,7 +89,7 @@ export default function Page() {
               <div className="card-body p-2">
                 <h2 className="card-title truncate mt-4 mb-2 ml-4 mr-4">{p.name}</h2>
                 <div className="aspect-[3/4] bg-primary-content rounded-lg mb-2 ml-4 mr-4" />
-                <p className="text-base text-lg">${p.price.toFixed(2)}</p>
+                <p className="text-base text-lg">£{p.price.toFixed(2)}</p>
                 <div className="card-actions justify-end">
                   <button
                     className="btn btn-primary m-2"

@@ -33,7 +33,7 @@ export function CartIcon() {
           ))}
           <div className="border-t pt-2 mt-2">
             <span className="font-bold">Total: </span>
-            ${items.reduce((sum, item) => sum + (item.product.price * item.quantity), 0).toFixed(2)}
+            £{items.reduce((sum, item) => sum + (item.product.price * item.quantity), 0).toFixed(2)}
           </div>
         </div>
       )}

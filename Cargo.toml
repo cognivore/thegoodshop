@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 actix-web = "*"
+actix-files = "*"
 serde = "*"
 serde_json = "*"
 serde_derive = "*"
@@ -14,6 +15,7 @@ anyhow = "*"
 tracing = "*"
 tracing-subscriber = { version = "*", features = ["env-filter"] }
 tracing-appender = "*"
+async-stripe = { version = "*", features = [ "runtime-tokio-hyper" ] }
 
 sqlx = { version = "*", features = ["runtime-tokio-native-tls", "macros", "sqlite"] }
 
